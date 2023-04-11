@@ -51,6 +51,9 @@ $hotels = [
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP-HOTELS</title>
+    <!-- bootstrap   -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -67,6 +70,32 @@ $hotels = [
             </li>
         <?php } ?>
     </ul>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">name</th>
+      <th scope="col">description</th>
+      <th scope="col">parking</th>
+      <th scope="col">vote</th>
+      <th scope="col">distance</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($hotels as $hotel) { ?>
+    <tr>
+      <td><?php echo $hotel['name']; ?></td>
+      <td><?php echo $hotel['description']; ?></td>
+      <td><?php echo $hotel['parking'] === true ? 'Si' : 'No'; ?></td>
+      <td><?php echo $hotel['vote']; ?></td>
+      <td><?php echo $hotel['distance_to_center']; ?>KM</td>
+
+
+    </tr>
+    <?php } ?>
+
+  </tbody>
+</table>
 </body>
 
 </html>
